@@ -1,0 +1,16 @@
+{
+    "editor.formatOnSave": true,
+    "python.languageServer": "Pylance",
+    "python.analysis.typeCheckingMode": "basic",
+    "python.analysis.diagnosticMode": "workspace",
+    "python.formatting.autopep8Args": [
+        "--ignore",
+        "E402", // Module level import not at top of file
+        "--max-line-length",
+        "100",
+    ],
+    "python.linting.pylintEnabled": true,
+    "python.linting.lintOnSave": true,
+    "python.linting.enabled": true,
+    "python.linting.pylintArgs": []
+}
