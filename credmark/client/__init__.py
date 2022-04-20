@@ -26,6 +26,10 @@ class CredmarkClient:
 
     def __init__(self, url: Union[str, None] = None, api_key: Union[str, None] = None,
                  model_run_timeout=600):
+        """
+        Create a client instance that can be used to make
+        requests for model metadata and running models.
+        """
         self.__url = url if url is not None else GATEWAY_API_URL
         self.__api_key = api_key if api_key is not None else os.environ.get('CREDMARK_API_KEY')
         self.model_run_timeout = model_run_timeout
@@ -67,16 +71,25 @@ class CredmarkClient:
                 resp.close()
 
     def get_models(self):
+        """
+        Get list of models metadata
+        """
         url = urljoin(self.__url, GET_MODELS_PATH)
         models = self._get(url)
         return models if models is not None else []
 
     def get_model(self, slug: str):
+        """
+        Get metadata for a model by slug
+        """
         path = GET_MODEL_PATH_FORMAT.format(quote(slug))
         url = urljoin(self.__url, path)
         return self._get(url)
 
     def get_model_deployments(self, slug: str):
+        """
+        Get deployments metadata for a model slug
+        """
         path = GET_MODEL_DEPLOYMENTS_PATH_FORMAT.format(quote(slug))
         url = urljoin(self.__url, path)
         return self._get(url)
@@ -89,6 +102,9 @@ class CredmarkClient:
                   raise_error_results=False,
                   version: Union[str, None] = None
                   ) -> dict[str, Any]:
+        """
+        Run a model
+        """
         req = {
             'slug': slug,
             'chainId': chain_id,
