@@ -38,29 +38,29 @@ This package includes a command-line tool ``credmark``.
 
 .. code-block::
 
-usage: credmark [-h] [--log_level LOG_LEVEL] [--api_url API_URL]
-                {version,models,deployed-models,describe,describe-models,man,run,run-model} ...
+    usage: credmark [-h] [--log_level LOG_LEVEL] [--api_url API_URL]
+                    {version,models,deployed-models,describe,describe-models,man,run,run-model} ...
 
-Credmark developer tool
+    Credmark developer tool
 
-optional arguments:
-  -h, --help            show this help message and exit
-  --log_level LOG_LEVEL
-                        Log level: DEBUG, INFO, WARNING, ERROR, CRITICAL
-  --api_url API_URL     Credmark API url. Defaults to the standard API gateway. You do not normally
-                        need to set this.
+    optional arguments:
+    -h, --help            show this help message and exit
+    --log_level LOG_LEVEL
+                            Log level: DEBUG, INFO, WARNING, ERROR, CRITICAL
+    --api_url API_URL     Credmark API url. Defaults to the standard API gateway. You do not normally
+                            need to set this.
 
-Commands:
-  Supported commands
+    Commands:
+    Supported commands
 
-  {version,models,deployed-models,describe,describe-models,man,run,run-model}
-                        additional help
-    version             Show version of the package
-    models (deployed-models)
-                        List models deployed on server
-    describe (describe-models, man)
-                        Show documentation for models
-    run (run-model)     Run a model
+    {version,models,deployed-models,describe,describe-models,man,run,run-model}
+                            additional help
+        version             Show version of the package
+        models (deployed-models)
+                            List models deployed on server
+        describe (describe-models, man)
+                            Show documentation for models
+        run (run-model)     Run a model
 
 
 Run a Model
